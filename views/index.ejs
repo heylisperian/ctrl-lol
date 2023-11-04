@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ctrl + LOL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+            color: white;
+        }
+        body {
+            background-color: #3C4043;
+            height: 100vh;
+            padding: 100px 10%;
+            font-size: xx-large;
+        }
+        p {
+            margin: 15px 0;
+            max-width: 600px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <% if (locals.type) { %>
+        <div>
+            <% if (type === "single") { %>
+            <p>>> <%= joke %></p>
+            <% } else if (type === "twopart") { %>
+            <p>>> <%= setup %></p>
+            <p>>> <%= delivery %></p>
+            <% } %>
+        </div>
+    <% } else { %>
+    <p>Frustated?</p>
+    <% } %>
+    <a href="/more" class="btn">Generate Joke</a>
+</body>
+</html>
